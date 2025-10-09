@@ -13,6 +13,8 @@ type SignInActionPayload = {
 export const signInAction = async ({ username, password }: SignInActionPayload) => {
     const cookie = await cookies()
 
+    console.log(ENV)
+
     if (username !== ENV.USERNAME || password !== ENV.PASSWORD) {
         return {
             success: false,
